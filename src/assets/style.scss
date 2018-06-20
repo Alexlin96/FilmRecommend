@@ -1,0 +1,252 @@
+@import "_rem.scss";
+html {
+  background-color: #f5f5f5;
+  font-family: PingFangSC-Regular, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+input {
+  border: none;
+}
+
+//主题色
+$themeColor:#2d8cf0;
+//主题字体颜色
+$titleColor: #1c2438;
+$contentColor: #495060;
+//段落字体大小
+$fontSize1:16px;//主标题
+$fontSize2:14px;//次级标题
+$fontSize3:12px;//小标题
+$fontSizeContent:12px;//正文
+//边框线
+$borderLine: 1px solid #dddee1;
+//另一种主题色
+$themeColors: #ff883e;
+//定义常用 flex mixin 兼容
+@mixin flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+}
+
+@mixin justifyContent($layout) {
+  -webkit-justify-content: $layout;
+  -moz-justify-content: $layout;
+  -ms-justify-content: $layout;
+  -o-justify-content: $layout;
+  -khtml-justify-content: $layout;
+  justify-content: $layout;
+}
+
+@mixin alignItems($layout) {
+  -webkit-align-items: $layout;
+  -moz-align-items: $layout;
+  -ms-align-items: $layout;
+  -o-align-items: $layout;
+  -khtml-align-items: $layout;
+  align-items: $layout;
+}
+
+@mixin direction($layout) {
+  -webkit-flex-direction: $layout;
+  -moz-flex-direction: $layout;
+  -ms-flex-direction: $layout;
+  -o-flex-direction: $layout;
+  -khtml-flex-direction: $layout;
+  flex-direction: $layout;
+}
+
+@mixin wrap($layout) {
+  -webkit-flex-wrap: $layout;
+  -moz-flex-wrap: $layout;
+  -ms-flex-wrap: $layout;
+  -o-flex-wrap: $layout;
+  -khtml-flex-wrap: $layout;
+  flex-wrap: $layout;
+}
+
+@mixin alignContent($layout) {
+  -webkit-align-content: $layout;
+  -moz-align-content: $layout;
+  -ms-align-content: $layout;
+  -o-align-content: $layout;
+  -khtml-align-content: $layout;
+  align-content: $layout;
+}
+
+//组合flex
+@mixin flexCenter {
+  @include flex;
+  @include justifyContent(center);
+  @include alignItems(center);
+}
+
+@mixin flexSpaceBetween {
+  @include flex;
+  @include justifyContent(space-between);
+  @include alignItems(center);
+}
+
+@mixin flexSpaceAround {
+  @include flex;
+  @include justifyContent(space-around);
+  @include alignItems(center);
+}
+
+//超出字数后显示省略号
+@mixin ell($num) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+  overflow: hidden;
+}
+
+/*************************************common**********************************************/
+*{
+  padding:0;
+  margin:0;
+}
+
+.container{
+  position: relative;
+  width:100%;
+  height:100%;
+  overflow: auto;
+  margin-bottom:rem(55px);
+  margin-top:rem(43px);
+}
+
+.children-nav{
+  position: fixed;
+  top:rem(16px);
+  width:100%;
+  z-index:100;
+}
+
+.layout{
+  background: #f5f7f9;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.layout-logo{
+  width: 100px;
+  height: 30px;
+  background: #5b6270;
+  border-radius: 3px;
+  float: left;
+  position: relative;
+  top: 15px;
+  left: 20px;
+}
+.nav-header{
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 100;
+}
+.center-content{
+  border:0;
+  min-height: 530px;
+}
+.layout-footer-center{
+  color: #f5f7f9;
+  background-color: #292929;
+  text-align: center;
+}
+.nav-tab{
+  position: fixed;
+}
+.right-container{
+  padding:50px 0;
+  width:100%;
+}
+.header-title{
+  font-size: 20px;
+  color: #ffffff;
+}
+.log-out{
+  float: right;
+  margin-right:20px;
+  color: #ffffff;
+  margin-top:15px;
+}
+.table-page{
+  margin-top:10px;
+}
+.write{
+  margin-top:rem(10px);
+}
+.ivu-card-body{
+  padding:0!important;
+}
+/*****************************************************************************************/
+/******************************************首页***********************************************/
+.main-title{
+  width:100%;
+  padding:rem(10px);
+  text-align: center;
+  color:#ffffff;
+}
+h2{
+  color:#ffffff;
+}
+.index-list{
+  padding:rem(5px) 0;
+  color:#ffffff;
+}
+.index-list img{
+  width:100%;
+}
+.index-list h3{
+  text-align: center;
+  color:#ffffff;
+}
+.index-list-btn{
+  margin-left:rem(2px);
+}
+/*****************************************************************************************/
+/******************************************购票***********************************************/
+.seat-list{
+  width:300px;
+  display:flex;
+  flex-wrap: wrap;
+  margin:auto;
+}
+.seat-list li{
+  flex: 1;
+  margin-right:10px;
+  text-align: center;
+}
+.seat-list li:hover{
+  cursor: pointer;
+}
+.seat-img{
+  width:20px;
+  height:20px;
+}
+.scene{
+  width:100px;
+  display: block;
+  margin: auto;
+}
+.pay-btn{
+  width:100%;
+  margin:100px auto 0 auto;
+}
+.image-info{
+  width:rem(70px);
+  heght:rem(50px);
+}
+.user-img{
+  width:rem(20px);
+  height:rem(20px);
+  border-radius: 50%;
+}
+/*****************************************************************************************/
